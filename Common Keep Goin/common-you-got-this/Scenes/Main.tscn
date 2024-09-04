@@ -1,0 +1,109 @@
+[gd_scene load_steps=19 format=3 uid="uid://dnl0q7xlntvwh"]
+
+[ext_resource type="Texture2D" uid="uid://csnxv702nsolg" path="res://Assets/Main/textures/grids/Dark/Ground Grass Texure.jpg" id="1_m7006"]
+[ext_resource type="Texture2D" uid="uid://cm5m7nr7dugjd" path="res://Assets/Main/textures/grids/Purple/texture_09.png" id="2_6bpua"]
+[ext_resource type="Texture2D" uid="uid://djg8y25y06h5n" path="res://Assets/Main/textures/grids/Green/texture_09.png" id="3_h3kdu"]
+[ext_resource type="Texture2D" uid="uid://b58xv1joypxo5" path="res://Assets/Main/textures/grids/Orange/texture_09.png" id="4_vupta"]
+[ext_resource type="PackedScene" uid="uid://cq3kiyuwdaxym" path="res://Scenes/player.tscn" id="5_3hvxd"]
+[ext_resource type="PackedScene" uid="uid://cq5cdvbfsn1q4" path="res://Assets/Main/models/BOULDER001.glb" id="5_o6f1r"]
+[ext_resource type="PackedScene" uid="uid://bnq0w6nnmjp4i" path="res://Assets/Main/models/BOULDER002.glb" id="6_awbi1"]
+[ext_resource type="PackedScene" uid="uid://uk0ussm11e8p" path="res://Assets/Main/models/BOULDER003.glb" id="7_1bycc"]
+[ext_resource type="PackedScene" uid="uid://c1kt7c74yx48b" path="res://Assets/Main/models/Stump001_low.glb" id="8_gbxcj"]
+[ext_resource type="PackedScene" uid="uid://clros24wllyaw" path="res://Assets/Main/models/Pine01_low.glb" id="9_hhgyd"]
+[ext_resource type="PackedScene" uid="uid://dobbmlg2eh54r" path="res://Assets/Main/models/Picnic Table.glb" id="11_27tdp"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qril6"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_6d4q1"]
+sky_material = SubResource("ProceduralSkyMaterial_qril6")
+
+[sub_resource type="Environment" id="Environment_3xl4p"]
+background_mode = 2
+sky = SubResource("Sky_6d4q1")
+tonemap_mode = 3
+tonemap_exposure = 0.98
+ssr_enabled = true
+ssr_max_steps = 32
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+sdfgi_use_occlusion = true
+glow_enabled = true
+glow_normalized = true
+glow_blend_mode = 4
+fog_enabled = true
+fog_light_color = Color(1, 1, 1, 1)
+fog_density = 0.003
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mq8ug"]
+albedo_texture = ExtResource("1_m7006")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cg2kg"]
+albedo_texture = ExtResource("2_6bpua")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mmfhf"]
+albedo_texture = ExtResource("3_h3kdu")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5fao4"]
+albedo_texture = ExtResource("4_vupta")
+uv1_triplanar = true
+
+[node name="World" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_3xl4p")
+
+[node name="map" type="Node3D" parent="."]
+
+[node name="floor" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.403584, -0.5, 0.0831318)
+material_overlay = SubResource("StandardMaterial3D_mq8ug")
+use_collision = true
+size = Vector3(1000, 1, 1000)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="map"]
+transform = Transform3D(0.726808, -0.00180539, -0.686838, 0.00287865, 0.999996, 0.000417624, 0.686834, -0.0022807, 0.72681, 3.53805, 0.5, -4.5)
+material_override = SubResource("StandardMaterial3D_cg2kg")
+use_collision = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="map"]
+transform = Transform3D(-0.216137, 0.00102994, -0.976363, 0.00287865, 0.999996, 0.000417624, 0.976359, -0.00272034, -0.216139, -5.86195, 1, -1.9)
+material_override = SubResource("StandardMaterial3D_mmfhf")
+use_collision = true
+size = Vector3(2, 2, 2)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="map"]
+transform = Transform3D(0.836357, -0.00217865, -0.548181, 0.00287865, 0.999996, 0.000417624, 0.548178, -0.00192731, 0.836359, 2.55325, 1.5, 4.92457)
+material_override = SubResource("StandardMaterial3D_5fao4")
+use_collision = true
+size = Vector3(3, 3, 3)
+
+[node name="BOULDER001" parent="map" instance=ExtResource("5_o6f1r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.07797)
+
+[node name="BOULDER002" parent="map" instance=ExtResource("6_awbi1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.95078, 4.76837e-07, 10.282)
+
+[node name="BOULDER003" parent="map" instance=ExtResource("7_1bycc")]
+transform = Transform3D(0.940448, 0, 0.339936, 0, 1, 0, -0.339936, 0, 0.940448, 0.732781, 0, 12.7234)
+
+[node name="Stump001_low" parent="map" instance=ExtResource("8_gbxcj")]
+transform = Transform3D(0.343493, 0, 0, 0, 0.343493, 0, 0, 0, 0.343493, 1.04668, 0.015746, -6.91599)
+
+[node name="Pine01_low" parent="map" instance=ExtResource("9_hhgyd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.72592, 9.53674e-07, 0.0979369)
+
+[node name="Picnic Table" parent="map" instance=ExtResource("11_27tdp")]
+transform = Transform3D(0.525659, 0, 0, 0, 0.525659, 0, 0, 0, 0.525659, 9.50798, 0, -1.99881)
+
+[node name="Player" parent="." instance=ExtResource("5_3hvxd")]
