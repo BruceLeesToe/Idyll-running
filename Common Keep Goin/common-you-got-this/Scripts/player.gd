@@ -15,15 +15,24 @@ var running = false
 
 @export var sens_horizontal = 0.5
 @export var sens_vertical = 0.5
+# Implement look lock and escape togggle
+@export var mouseLock:bool = false;
 
 func _ready():
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	if (mouseLock):
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
 func _input(event):
 	if event is InputEventMouseMotion:
 		rotate_y(deg_to_rad(-event.relative.x*sens_horizontal))
 		visuals.rotate_y(deg_to_rad(event.relative.x*sens_horizontal))
 		camera_mount.rotate_x(deg_to_rad(-event.relative.y*sens_vertical))
+	if Input.is_action_just_pressed("Escape"):
+		mouseLock = !mouseLock
+		if (mouseLock):
+			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		else:
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 func _physics_process(delta: float) -> void:
 	
