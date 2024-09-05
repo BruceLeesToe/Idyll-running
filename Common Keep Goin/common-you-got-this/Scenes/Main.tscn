@@ -177,27 +177,32 @@ material_override = SubResource("StandardMaterial3D_cg2kg")
 use_collision = true
 
 [node name="CSGBox3D28" type="CSGBox3D" parent="map"]
-transform = Transform3D(0.726808, -0.00180539, -0.686838, 0.00287865, 0.999996, 0.000417624, 0.686834, -0.0022807, 0.72681, -7.94208, 14.9388, -1.95702)
+transform = Transform3D(0.726808, -0.00180539, -0.686838, 0.00287865, 0.999996, 0.000417624, 0.686834, -0.0022807, 0.72681, -7.94208, 14.7503, -1.95702)
 material_override = SubResource("StandardMaterial3D_cg2kg")
 use_collision = true
 
 [node name="CSGBox3D29" type="CSGBox3D" parent="map"]
-transform = Transform3D(0.726808, -0.00180539, -0.686838, 0.00287865, 0.999996, 0.000417624, 0.686834, -0.0022807, 0.72681, -5.09675, 15.8533, -1.95702)
+transform = Transform3D(0.726808, -0.00180539, -0.686838, 0.00287865, 0.999996, 0.000417624, 0.686834, -0.0022807, 0.72681, -5.09675, 15.5067, -1.95702)
 material_override = SubResource("StandardMaterial3D_cg2kg")
 use_collision = true
 
 [node name="CSGBox3D30" type="CSGBox3D" parent="map"]
-transform = Transform3D(0.726808, -0.00180539, -0.686838, 0.00287865, 0.999996, 0.000417624, 0.686834, -0.0022807, 0.72681, -1.86527, 16.8492, -1.95702)
+transform = Transform3D(0.726808, -0.00180539, -0.686838, 0.00287865, 0.999996, 0.000417624, 0.686834, -0.0022807, 0.72681, -2.06251, 16.408, -1.95702)
 material_override = SubResource("StandardMaterial3D_cg2kg")
 use_collision = true
 
 [node name="CSGBox3D31" type="CSGBox3D" parent="map"]
-transform = Transform3D(0.726808, -0.00180539, -0.686838, 0.00287865, 0.999996, 0.000417624, 0.686834, -0.0022807, 0.72681, 1.46782, 17.9467, -1.95702)
+transform = Transform3D(0.726808, -0.00180539, -0.686838, 0.00287865, 0.999996, 0.000417624, 0.686834, -0.0022807, 0.72681, 1.27059, 17.5055, -1.95702)
 material_override = SubResource("StandardMaterial3D_cg2kg")
 use_collision = true
 
 [node name="CSGBox3D32" type="CSGBox3D" parent="map"]
-transform = Transform3D(0.726808, -0.00180539, -0.686838, 0.00287865, 0.999996, 0.000417624, 0.686834, -0.0022807, 0.72681, 4.73994, 19.0442, -1.95702)
+transform = Transform3D(0.726808, -0.00180539, -0.686838, 0.00287865, 0.999996, 0.000417624, 0.686834, -0.0022807, 0.72681, 3.84494, 18.3704, -1.95702)
+material_override = SubResource("StandardMaterial3D_cg2kg")
+use_collision = true
+
+[node name="CSGBox3D33" type="CSGBox3D" parent="map"]
+transform = Transform3D(0.726808, -0.00180539, -0.686838, 0.00287865, 0.999996, 0.000417624, 0.686834, -0.0022807, 0.72681, 6.09332, 19.4171, -1.95702)
 material_override = SubResource("StandardMaterial3D_cg2kg")
 use_collision = true
 
