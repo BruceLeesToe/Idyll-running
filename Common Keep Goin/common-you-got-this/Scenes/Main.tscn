@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dnl0q7xlntvwh"]
+[gd_scene load_steps=20 format=3 uid="uid://dnl0q7xlntvwh"]
 
 [ext_resource type="Texture2D" uid="uid://csnxv702nsolg" path="res://Assets/Main/textures/grids/Dark/Ground Grass Texure.jpg" id="1_m7006"]
 [ext_resource type="Texture2D" uid="uid://cm5m7nr7dugjd" path="res://Assets/Main/textures/grids/Purple/texture_09.png" id="2_6bpua"]
@@ -11,10 +11,13 @@
 [ext_resource type="PackedScene" uid="uid://c1kt7c74yx48b" path="res://Assets/Main/models/Stump001_low.glb" id="8_gbxcj"]
 [ext_resource type="PackedScene" uid="uid://clros24wllyaw" path="res://Assets/Main/models/Pine01_low.glb" id="9_hhgyd"]
 [ext_resource type="PackedScene" uid="uid://dobbmlg2eh54r" path="res://Assets/Main/models/Picnic Table.glb" id="11_27tdp"]
+[ext_resource type="PackedScene" uid="uid://cgv1vcsuidjsg" path="res://Assets/Main/models/SunFlower.glb" id="12_xajbo"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qril6"]
-sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+sky_top_color = Color(0.352077, 0.418487, 0.714434, 1)
+sky_horizon_color = Color(0.825405, 0.593311, 0.493067, 1)
+ground_bottom_color = Color(0.481842, 0.329992, 0.181649, 1)
+ground_horizon_color = Color(0.882489, 0.570756, 0.355392, 1)
 
 [sub_resource type="Sky" id="Sky_6d4q1"]
 sky_material = SubResource("ProceduralSkyMaterial_qril6")
@@ -22,20 +25,25 @@ sky_material = SubResource("ProceduralSkyMaterial_qril6")
 [sub_resource type="Environment" id="Environment_3xl4p"]
 background_mode = 2
 sky = SubResource("Sky_6d4q1")
+ambient_light_source = 3
+reflected_light_source = 2
 tonemap_mode = 3
-tonemap_exposure = 0.98
+tonemap_exposure = 1.67
 ssr_enabled = true
-ssr_max_steps = 32
+ssr_fade_in = 0.665741
 ssao_enabled = true
 ssil_enabled = true
-sdfgi_enabled = true
 sdfgi_use_occlusion = true
 glow_enabled = true
 glow_normalized = true
+glow_bloom = 0.04
 glow_blend_mode = 4
 fog_enabled = true
-fog_light_color = Color(1, 1, 1, 1)
-fog_density = 0.003
+fog_light_color = Color(0.585467, 0.545199, 0.475469, 1)
+fog_sky_affect = 0.0
+fog_height_density = 16.0
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.005
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mq8ug"]
 albedo_texture = ExtResource("1_m7006")
@@ -57,8 +65,13 @@ uv1_triplanar = true
 [node name="World" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+transform = Transform3D(-0.669702, 0.643137, -0.371315, -2.52207e-09, 0.5, 0.866026, 0.74263, 0.579979, -0.33485, 0, 0, 0)
+light_color = Color(0.565651, 0.627932, 0.844468, 1)
+light_energy = 1.5
+light_indirect_energy = 0.05
+light_volumetric_fog_energy = 0.005
 shadow_enabled = true
+directional_shadow_mode = 1
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_3xl4p")
@@ -261,3 +274,6 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6.72592, 9.53674e-07, 0
 transform = Transform3D(0.525659, 0, 0, 0, 0.525659, 0, 0, 0, 0.525659, 9.50798, 0, -1.99881)
 
 [node name="Player" parent="." instance=ExtResource("5_3hvxd")]
+
+[node name="SunFlower" parent="." instance=ExtResource("12_xajbo")]
+transform = Transform3D(0.826039, 0, -0.563613, 0, 1, 0, 0.563613, 0, 0.826039, -2.84128, -4.76837e-07, -3.6265)

@@ -1,3 +1,26 @@
-[gd_scene format=3 uid="uid://fyuknawcn1w0"]
+[gd_scene load_steps=7 format=3 uid="uid://fyuknawcn1w0"]
+
+[ext_resource type="Script" path="res://addons/terrabrush/TerraBrush.cs" id="1_or2w8"]
+[ext_resource type="Texture2D" uid="uid://c8dfrf32x52s2" path="res://Scenes/Test/Heightmap_0_0.res" id="2_wkffj"]
+[ext_resource type="Script" path="res://addons/terrabrush/Scripts/EditorResources/ZoneResource.cs" id="3_bwt1n"]
+[ext_resource type="Script" path="res://addons/terrabrush/Scripts/EditorResources/ZonesResource.cs" id="4_3ql76"]
+
+[sub_resource type="Resource" id="Resource_2ckpx"]
+script = ExtResource("3_bwt1n")
+ZonePosition = Vector2i(0, 0)
+HeightMapTexture = ExtResource("2_wkffj")
+SplatmapsTexture = []
+FoliagesTexture = []
+ObjectsTexture = []
+
+[sub_resource type="Resource" id="Resource_c5owg"]
+script = ExtResource("4_3ql76")
+Zones = [SubResource("Resource_2ckpx")]
 
 [node name="Test" type="Node3D"]
+
+[node name="TerraBrush" type="Node3D" parent="."]
+script = ExtResource("1_or2w8")
+DataPath = "res://Scenes/Test"
+TerrainZones = SubResource("Resource_c5owg")
+metadata/_edit_lock_ = false

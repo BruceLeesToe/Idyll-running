@@ -21,7 +21,7 @@ project/assembly_name="Common you Got tHis"
 
 [editor_plugins]
 
-enabled=PackedStringArray()
+enabled=PackedStringArray("res://addons/terrabrush/plugin.cfg")
 
 [input]
 
