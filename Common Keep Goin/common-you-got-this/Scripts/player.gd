@@ -16,7 +16,7 @@ var running = false
 @export var sens_horizontal = 0.5
 @export var sens_vertical = 0.5
 # Implement look lock and escape togggle
-@export var mouseLock:bool = false;
+@export var mouseLock:bool = true ;
 
 func _ready():
 	if (mouseLock):
