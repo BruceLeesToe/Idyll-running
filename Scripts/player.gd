@@ -4,7 +4,6 @@ extends CharacterBody3D
 @onready var animation_player: AnimationPlayer = $visuals/mixamo_base/AnimationPlayer
 @onready var visuals: Node3D = $visuals
 
-
 var SPEED:float = 2.3
 const JUMP_VELOCITY = 4.5
 
@@ -15,6 +14,7 @@ var running = false
 
 @export var sens_horizontal = 0.5
 @export var sens_vertical = 0.5
+
 # Implement look lock and escape togggle
 @export var mouseLock:bool = true ;
 
@@ -26,7 +26,9 @@ func _input(event):
 	if event is InputEventMouseMotion:
 		rotate_y(deg_to_rad(-event.relative.x*sens_horizontal))
 		visuals.rotate_y(deg_to_rad(event.relative.x*sens_horizontal))
+		# Clamp camera x-axis rotation
 		camera_mount.rotate_x(deg_to_rad(-event.relative.y*sens_vertical))
+		camera_mount.rotation.x = clampf(camera_mount.rotation.x, deg_to_rad(-70.0), deg_to_rad(70.0))
 	if Input.is_action_just_pressed("Escape"):
 		mouseLock = !mouseLock
 		if (mouseLock):
