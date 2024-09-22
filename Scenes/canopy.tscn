@@ -1,0 +1,9 @@
+[gd_scene load_steps=4 format=3 uid="uid://w5esx6uwjohd"]
+
+[ext_resource type="PackedScene" uid="uid://dnlw3h778fbnb" path="res://Assets/Main/models/Canopy.glb" id="1_madoj"]
+[ext_resource type="Script" path="res://Scripts/gen_leaves.gd" id="2_u2y0r"]
+[ext_resource type="Material" uid="uid://bglmiue74dnb6" path="res://Shaders/leaf_material.tres" id="3_dskfm"]
+
+[node name="Canopy" instance=ExtResource("1_madoj")]
+script = ExtResource("2_u2y0r")
+leaf_material = ExtResource("3_dskfm")

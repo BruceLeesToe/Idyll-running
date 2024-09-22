@@ -1,0 +1,22 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bglmiue74dnb6"]
+
+[ext_resource type="Shader" uid="uid://cjb271mw5eh0o" path="res://Shaders/leavesx_shader.tres" id="1_lqqti"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_lqqti")
+shader_parameter/flipUVs = false
+shader_parameter/showUVs = false
+shader_parameter/effectLerp = 1.0
+shader_parameter/inheritScale = true
+shader_parameter/windSpeed = 1.0
+shader_parameter/swayAmplitude = 1.0
+shader_parameter/shadowTint = Color(0, 0, 0.25, 1)
+shader_parameter/fresnelTint = Color(0.408, 1, 0.467, 1)
+shader_parameter/fresnelIntensity = 1.0
+shader_parameter/fresnelExponent = 5.0
+shader_parameter/leafOffset = Vector2(-0.5, -0.5)
+shader_parameter/leafScale = Vector2(1, 1)
+shader_parameter/colorNoiseIntensity = 0.1
+shader_parameter/colorNoiseScale = 1.0
+shader_parameter/_camera_transform = null
