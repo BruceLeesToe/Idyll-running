@@ -1,0 +1,63 @@
+[gd_scene load_steps=9 format=3 uid="uid://dvmerxb24sra7"]
+
+[ext_resource type="Script" path="res://Assets/Objects/Tools/WheelBarrow/WheelBarrow.cs" id="1_d332q"]
+[ext_resource type="PackedScene" uid="uid://dwaaqhk13a4fs" path="res://Assets/Main/models/wheel barrow.glb" id="2_3foua"]
+
+[sub_resource type="Curve" id="Curve_qjwf3"]
+min_value = -200.0
+max_value = 200.0
+_data = [Vector2(0.0863309, 22.4), 0.0, 0.0, 0, 0, Vector2(0.165468, 1.60001), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_tyyfs"]
+width = 253
+curve = SubResource("Curve_qjwf3")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5lksf"]
+inherit_velocity_ratio = -1.5
+direction = Vector3(0, 0.1, -0.2)
+spread = 6.506
+flatness = 1.0
+initial_velocity_min = 1.0
+initial_velocity_max = 3.0
+angular_velocity_min = -41.37
+angular_velocity_max = -4.13002
+orbit_velocity_min = -0.885
+orbit_velocity_max = -0.299
+gravity = Vector3(0, -2, 0)
+linear_accel_curve = SubResource("CurveTexture_tyyfs")
+turbulence_noise_strength = 6.39
+turbulence_noise_scale = 0.62
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2j2xs"]
+albedo_color = Color(0.250202, 0.146322, 0.0756776, 0.619608)
+
+[sub_resource type="SphereMesh" id="SphereMesh_8bvhf"]
+material = SubResource("StandardMaterial3D_2j2xs")
+radius = 0.2
+height = 0.3
+radial_segments = 8
+rings = 8
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u472x"]
+size = Vector3(0.836806, 0.984, 1.652)
+
+[node name="WheelBarrow" type="RigidBody3D" node_paths=PackedStringArray("particles") groups=["Item"]]
+disable_mode = 1
+script = ExtResource("1_d332q")
+particles = NodePath("GPUParticles3D")
+heldPosition = Vector3(0, -0.5, -0.5)
+heldRotation = Vector3(0, 0.5, 0)
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.998913, 0.0466009, 0, -0.0466009, 0.998913, -0.0134397, -0.0712192, 0.525629)
+trail_lifetime = 0.2
+process_material = SubResource("ParticleProcessMaterial_5lksf")
+draw_pass_1 = SubResource("SphereMesh_8bvhf")
+
+[node name="wheel barrow" parent="." instance=ExtResource("2_3foua")]
+transform = Transform3D(-4.37113e-08, 0, 1, 0.285989, 0.958232, 1.2501e-08, -0.958232, 0.285989, -4.18857e-08, 0, 0.193622, 0.171108)
+
+[node name="BarrowCollider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0162082, 0.557794, 0)
+shape = SubResource("BoxShape3D_u472x")
