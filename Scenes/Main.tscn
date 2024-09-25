@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dnl0q7xlntvwh"]
+[gd_scene load_steps=24 format=3 uid="uid://dnl0q7xlntvwh"]
 
 [ext_resource type="Texture2D" uid="uid://csnxv702nsolg" path="res://Assets/Main/textures/grids/Dark/Ground Grass Texure.jpg" id="1_m7006"]
 [ext_resource type="Texture2D" uid="uid://cm5m7nr7dugjd" path="res://Assets/Main/textures/grids/Purple/texture_09.png" id="2_6bpua"]

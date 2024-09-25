@@ -1,7 +1,6 @@
-[gd_scene load_steps=16 format=4 uid="uid://cq3kiyuwdaxym"]
+[gd_scene load_steps=15 format=4 uid="uid://cq3kiyuwdaxym"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_2b8hu"]
-[ext_resource type="PackedScene" uid="uid://bqpf2hejelncy" path="res://Assets/Objects/Tools/Hands/Hands.tscn" id="2_i1pnw"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_8l7hj"]
 
@@ -3452,9 +3451,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
 shape = SubResource("CylinderShape3D_8l7hj")
 
 [node name="visuals" type="Node3D" parent="."]
-
-[node name="Hands" parent="visuals" instance=ExtResource("2_i1pnw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1)
 
 [node name="mixamo_base" type="Node3D" parent="visuals"]
 transform = Transform3D(-0.986066, -4.11103e-06, 0.166356, -4.13714e-06, 1, 1.89534e-07, -0.166356, -5.01337e-07, -0.986066, 0.09255, 0, 0)
