@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://1on2a8klvx7j"
+path.s3tc="res://.godot/imported/Stump001_low_DefaultMaterial_Normal_OpenGL.png-cc0a8236d19dfa0222b4f188471bbbff.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "4c90f6b6fe73ce4d0be7682c2b60be7c"
+}
+
+[deps]
+
+source_file="res://Assets/Main/models/World Objects/Stump001_low_DefaultMaterial_Normal_OpenGL.png"
+dest_files=["res://.godot/imported/Stump001_low_DefaultMaterial_Normal_OpenGL.png-cc0a8236d19dfa0222b4f188471bbbff.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=1
+roughness/src_normal="res://Assets/Main/models/Stump001_low_DefaultMaterial_Normal_OpenGL.png"
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

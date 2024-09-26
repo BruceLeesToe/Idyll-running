@@ -1,22 +1,21 @@
-[gd_scene load_steps=24 format=3 uid="uid://dnl0q7xlntvwh"]
+[gd_scene load_steps=25 format=3 uid="uid://dnl0q7xlntvwh"]
 
 [ext_resource type="Texture2D" uid="uid://csnxv702nsolg" path="res://Assets/Main/textures/grids/Dark/Ground Grass Texure.jpg" id="1_m7006"]
 [ext_resource type="Texture2D" uid="uid://cm5m7nr7dugjd" path="res://Assets/Main/textures/grids/Purple/texture_09.png" id="2_6bpua"]
 [ext_resource type="Texture2D" uid="uid://djg8y25y06h5n" path="res://Assets/Main/textures/grids/Green/texture_09.png" id="3_h3kdu"]
 [ext_resource type="Texture2D" uid="uid://b58xv1joypxo5" path="res://Assets/Main/textures/grids/Orange/texture_09.png" id="4_vupta"]
 [ext_resource type="PackedScene" uid="uid://cq3kiyuwdaxym" path="res://Scenes/player.tscn" id="5_3hvxd"]
-[ext_resource type="PackedScene" uid="uid://cq5cdvbfsn1q4" path="res://Assets/Main/models/BOULDER001.glb" id="5_o6f1r"]
-[ext_resource type="PackedScene" uid="uid://bnq0w6nnmjp4i" path="res://Assets/Main/models/BOULDER002.glb" id="6_awbi1"]
-[ext_resource type="PackedScene" uid="uid://uk0ussm11e8p" path="res://Assets/Main/models/BOULDER003.glb" id="7_1bycc"]
-[ext_resource type="PackedScene" uid="uid://c1kt7c74yx48b" path="res://Assets/Main/models/Stump001_low.glb" id="8_gbxcj"]
-[ext_resource type="PackedScene" uid="uid://clros24wllyaw" path="res://Assets/Main/models/Pine01_low.glb" id="9_hhgyd"]
-[ext_resource type="PackedScene" uid="uid://dobbmlg2eh54r" path="res://Assets/Main/models/Picnic Table.glb" id="11_27tdp"]
-[ext_resource type="PackedScene" uid="uid://ds8a7hp7akpor" path="res://Assets/Main/models/wheel barrow wheel.glb" id="11_ejs2h"]
-[ext_resource type="PackedScene" uid="uid://dwaaqhk13a4fs" path="res://Assets/Main/models/wheel barrow.glb" id="12_8w28n"]
-[ext_resource type="PackedScene" uid="uid://cgv1vcsuidjsg" path="res://Assets/Main/models/SunFlower.glb" id="12_xajbo"]
+[ext_resource type="PackedScene" uid="uid://cq5cdvbfsn1q4" path="res://Assets/Main/models/World Objects/BOULDER001.glb" id="5_o6f1r"]
+[ext_resource type="PackedScene" uid="uid://bnq0w6nnmjp4i" path="res://Assets/Main/models/World Objects/BOULDER002.glb" id="6_awbi1"]
+[ext_resource type="PackedScene" uid="uid://uk0ussm11e8p" path="res://Assets/Main/models/World Objects/BOULDER003.glb" id="7_1bycc"]
+[ext_resource type="PackedScene" uid="uid://clros24wllyaw" path="res://Assets/Main/models/Trees/Pine01_low.glb" id="9_hhgyd"]
+[ext_resource type="PackedScene" uid="uid://dobbmlg2eh54r" path="res://Assets/Main/models/World Objects/Picnic Table.glb" id="11_27tdp"]
+[ext_resource type="PackedScene" uid="uid://ds8a7hp7akpor" path="res://Assets/Main/models/Tools/Wheel Barrow/wheel barrow wheel.glb" id="11_ejs2h"]
+[ext_resource type="PackedScene" uid="uid://b5b5s6lxu7jg7" path="res://Assets/Main/models/Tools/Lantern/Lantern.glb" id="12_4n1cq"]
+[ext_resource type="PackedScene" uid="uid://dwaaqhk13a4fs" path="res://Assets/Main/models/Tools/Wheel Barrow/wheel barrow.glb" id="12_8w28n"]
+[ext_resource type="PackedScene" uid="uid://cgv1vcsuidjsg" path="res://Assets/Main/models/Flowers/Sunflower/SunFlower.glb" id="12_xajbo"]
 [ext_resource type="PackedScene" uid="uid://w5esx6uwjohd" path="res://Scenes/canopy.tscn" id="13_mr1k2"]
-[ext_resource type="PackedScene" uid="uid://dvmerxb24sra7" path="res://Assets/Objects/Tools/WheelBarrow/WheelBarrow.tscn" id="16_su87v"]
-[ext_resource type="PackedScene" uid="uid://bftq0m48hfv0p" path="res://Assets/Main/models/Dirty.glb" id="16_usfct"]
+[ext_resource type="PackedScene" uid="uid://bftq0m48hfv0p" path="res://Assets/Main/models/Tools/Watering Can/Dirty.glb" id="16_usfct"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qril6"]
 sky_top_color = Color(0.352077, 0.418487, 0.714434, 1)
@@ -271,9 +270,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.95078, 4.76837e-07, 10.282)
 [node name="BOULDER003" parent="map" instance=ExtResource("7_1bycc")]
 transform = Transform3D(0.940448, 0, 0.339936, 0, 1, 0, -0.339936, 0, 0.940448, 0.732781, 0, 12.7234)
 
-[node name="Stump001_low" parent="map" instance=ExtResource("8_gbxcj")]
-transform = Transform3D(0.343493, 0, 0, 0, 0.343493, 0, 0, 0, 0.343493, 1.04668, 0.015746, -6.91599)
-
 [node name="Pine01_low" parent="map" instance=ExtResource("9_hhgyd")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6.72592, 9.53674e-07, 0.0979369)
 
@@ -286,6 +282,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.07314, 0.0907441, -0.50254
 [node name="wheel barrow" parent="map" instance=ExtResource("12_8w28n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.804876, 0.0836106, 1.47333)
 
+[node name="Lantern" parent="map" instance=ExtResource("12_4n1cq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.81465, -1.19209e-07, -2.31713)
+
 [node name="Player" parent="." instance=ExtResource("5_3hvxd")]
 
 [node name="SunFlower" parent="." instance=ExtResource("12_xajbo")]
@@ -295,8 +294,8 @@ transform = Transform3D(0.826039, 0, -0.563613, 0, 1, 0, 0.563613, 0, 0.826039, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.32383, 0, 1.9133)
 leaf_material = SubResource("ShaderMaterial_wasbk")
 
-[node name="WheelBarrow" parent="." instance=ExtResource("16_su87v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.320979, 0.235542, -3.07467)
-heldRotation = Vector3(0, 1.5, 0)
 [node name="Dirty" parent="." instance=ExtResource("16_usfct")]
 transform = Transform3D(0.175702, 0, 0, 0, 0.175702, 0, 0, 0, 0.175702, 1.18041, 0, -2.2282)
+
+[node name="wheel barrow" parent="." instance=ExtResource("12_8w28n")]
+transform = Transform3D(0.370282, 0, -0.928919, 0, 1, 0, 0.928919, 0, 0.370282, -0.563956, 0, -1.22846)
